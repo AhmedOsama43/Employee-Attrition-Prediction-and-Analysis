@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn>=1.4.2,<2
+imbalanced-learn>=0.14.2
+matplotlib
+seaborn
+plotly
+streamlit
+joblib
