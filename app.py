@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
 import time
+from pathlib import Path
 
 from src.data_preprocessing import load_data, preprocess_data
 from src.train_model import train_model
@@ -23,7 +24,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Logo + Title
-st.image("assets/logo.png", width=100)
+logo_path = Path("assets/logo.png")
+if logo_path.exists():
+    st.image(str(logo_path), width=100)
 
 st.markdown('<p class="big-title">Employee Attrition AI System</p>', unsafe_allow_html=True)
 st.write("Smart HR Decision Support Dashboard")
@@ -95,7 +98,7 @@ with col2:
             }
         ))
 
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
 
         # Result
@@ -126,11 +129,11 @@ c1, c2 = st.columns(2)
 
 with c1:
     fig1 = px.histogram(df, x="Attrition", title="Attrition Distribution")
-    st.plotly_chart(fig1, use_container_width=True)
+    st.plotly_chart(fig1, width="stretch")
 
 with c2:
     fig2 = px.box(df, x="Attrition", y="MonthlyIncome", title="Income vs Attrition")
-    st.plotly_chart(fig2, use_container_width=True)
+    st.plotly_chart(fig2, width="stretch")
 
 # Feature Importance
 st.subheader("Top Factors")
