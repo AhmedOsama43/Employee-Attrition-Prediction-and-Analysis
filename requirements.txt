@@ -1,9 +1,13 @@
+streamlit
 pandas
 numpy
-scikit-learn>=1.4.2,<2
-imbalanced-learn>=0.14.2
+scikit-learn
+xgboost
+plotly
 matplotlib
 seaborn
-plotly
-streamlit
+shap
 joblib
+imbalanced-learn
+scipy
+openpyxl
